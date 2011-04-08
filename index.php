@@ -17,7 +17,9 @@
 	</head>
 	<body>
 		<?php
-			$user = 'egermano';
+			
+			//query a user timeline fomr Twitter API
+			$user = 'egermano';//username
 			
 			$search = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=".$user."&trim_user=false";
 			
@@ -26,6 +28,8 @@
 			curl_setopt($tw, CURLOPT_URL, $search);
 			curl_setopt($tw, CURLOPT_RETURNTRANSFER, TRUE);
 			$twi = curl_exec($tw);
+			
+			curl_close($tw);
 		?>
 		<ul id="tweets">
 		</ul>
@@ -48,9 +52,6 @@
 			//parse a content
 			document.getElementById('tweets').innerHTML = test.parseURL().parseHashtag().parseUsername();
 		</script>
-		<?php
-			curl_close($tw);
-		?>
 		<div id="footer">
 			by <a href="http://egermano.com">@egermano</a> - follow me on <a href="http://twitter.com/egermano">Twitter</a>
 		</div>
