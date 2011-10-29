@@ -17,27 +17,27 @@
 	</head>
 	<body>
 		<?php
-			
+
 			//query a user timeline fomr Twitter API
 			$user = 'egermano';//username
-			
+
 			$search = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=".$user."&trim_user=false";
-			
+
 			$tw = curl_init();
-			
+
 			curl_setopt($tw, CURLOPT_URL, $search);
 			curl_setopt($tw, CURLOPT_RETURNTRANSFER, TRUE);
 			$twi = curl_exec($tw);
-			
+
 			curl_close($tw);
 		?>
 		<ul id="tweets">
 		</ul>
 		<script language="JavaScript" type="text/javascript">
-		
+
 			// load tweets PHP
 			var tweets = <?=$twi?>;
-		
+
 			//render tweets
 			for(var i=0, len=tweets.length;i<len;i++) {
 				var li = document.createElement('li');
@@ -45,10 +45,10 @@
 				li.innerHTML = buildTweet(tweets[i]);
 				document.getElementById('tweets').appendChild(li);
 			}
-		
+
 			// get a twitter content
 			var test = document.getElementById('tweets').innerHTML;
-		
+
 			//parse a content
 			document.getElementById('tweets').innerHTML = test.parseURL().parseHashtag().parseUsername();
 		</script>
