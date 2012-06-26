@@ -29,9 +29,9 @@ String.prototype.link = function(str,opt) {
 
 /**
  * Prototyping String to create a parseURL method
- * 
+ *
  * Method will create a links in url strings
- * 
+ *
  * @param none
  */
 String.prototype.parseURL = function() {
@@ -43,9 +43,9 @@ String.prototype.parseURL = function() {
 
 /**
  * Prototyping String to create a parseUsername method
- * 
+ *
  * Method will create a links in @username strings
- * 
+ *
  * @param none
  */
 String.prototype.parseUsername = function() {
@@ -58,9 +58,9 @@ String.prototype.parseUsername = function() {
 
 /**
  * Prototyping String to create a parseHashtag method
- * 
+ *
  * Method will create a links in #hashtags strings
- * 
+ *
  * @param none
  */
 String.prototype.parseHashtag = function() {
