@@ -67,7 +67,7 @@ String.prototype.parseHashtag = function() {
 	return this.replace(/[#]+[A-Za-z0-9-_]+/g, function(t) {
 		var tag = t.replace("#","%23")
 		var options = {nofollow:true, newWindow: true};
-		return t.link("http://search.twitter.com/search?q="+tag, options );
+		return t.link("http://twitter.com/search?q="+tag+"&src=hash", options );
 	});
 };
 
