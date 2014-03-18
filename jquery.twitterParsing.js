@@ -82,7 +82,7 @@ String.prototype.parseHashtag = function() {
         return this.each(function(){
             var $text = $(this).text();
 
-            $(this).text($text.parseURL().parseHashtag().parseUsername());
+            $(this).html($text.parseURL().parseHashtag().parseUsername());
         });
     };
 }(jQuery));
